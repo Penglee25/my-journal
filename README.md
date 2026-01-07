@@ -1,1 +1,2 @@
-# THIS IS MY JOURNAL
+# 📋 My Journal Project Overview
+My Journal is a modern, responsive web application that allows users to create, manage, and export personal journal entries. The application features a book-like aesthetic with a clean, intuitive interface that works seamlessly across all devices. Built with vanilla HTML, CSS, and JavaScript, it requires no backend infrastructure and runs entirely in the browser with data persisted locally.
