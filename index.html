@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Journal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <div class="book">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-book-open"></i> My Journal</h1>
+            <p class="subtitle">Capture your thoughts, memories, and ideas</p>
+        </div>
+
+        <!-- Entry Form -->
+        <div class="entry-form">
+            <div class="form-group">
+                <label for="title"><i class="fas fa-heading"></i> Entry Title</label>
+                <input type="text" id="title" class="form-control" placeholder="What's on your mind today?">
+            </div>
+
+            <div class="form-group">
+                <label for="content"><i class="fas fa-pen"></i> Your Thoughts</label>
+                <textarea id="content" class="form-control" placeholder="Write freely... today was..."></textarea>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="saveEntry()">
+                    <i class="fas fa-save"></i> Save Entry
+                </button>
+                <button class="btn btn-danger" onclick="clearForm()">
+                    <i class="fas fa-times"></i> Clear
+                </button>
+            </div>
+        </div>
+
+        <!-- Import/Export -->
+        <div class="import-export">
+            <button class="btn btn-success" onclick="exportToJSON()">
+                <i class="fas fa-file-export"></i> Export Journal
+            </button>
+
+            <div class="file-input-wrapper">
+                <input type="file" accept=".json" onchange="importFromJSON(event)" id="importFile">
+                <label for="importFile" class="file-input-label">
+                    <i class="fas fa-file-import"></i> Import Journal
+                </label>
+            </div>
+
+            <button class="btn btn-secondary" onclick="clearAllEntries()">
+                <i class="fas fa-trash-alt"></i> Clear All
+            </button>
+        </div>
+
+        <!-- Entries -->
+        <div class="entries-container">
+            <div class="entries-header">
+                <h2><i class="fas fa-history"></i> Previous Entries</h2>
+                <div class="entry-count" id="entryCount">0 entries</div>
+            </div>
+
+            <div id="entries">
+                <!-- Entries will be loaded here -->
+                <div class="empty-state">
+                    <i class="fas fa-book"></i>
+                    <h3>Your journal is empty</h3>
+                    <p>Write your first entry above to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/index.js"></script>
+</body>
+
+</html>
